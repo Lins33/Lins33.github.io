@@ -1,34 +1,27 @@
 <html>
-    <body>
-        <script>
-
-
-
-            var value=11;
-            var initvalue=22;
-            var s=0;
-
-
-
-
-            function addithion(){
-                var value=initvalue;
-                return function add(x){
-                    value=value+x;
-                    this.s=value;
-                   
+    <head>
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script >
+            var data=[
+                {name:"计算机安装与维护",credit:2},
+                {name:"静态网页制作",credit:2},
+                {name:"计算机编程基础",credit:4},
+                {name:"大学英语",credit:2},
+                {name:"软件技术导论",credit:2}
+            ];
+            $(document).ready(function () {
+               
+                for(var i in data){
+                    $("ul").append( $("<li></li>").text(data[i].name+"(学分："+data[i].credit+")"));  
                 };
-                
-            } 
-            
-            
-            var func=addithion();
-            func(33);
-            func(44);
-            console.log(s);
-
-
-
+	    
+             });
+    
         </script>
+
+    </head>
+    <body>
+            
+        <ul></ul>
     </body>
 </html>
